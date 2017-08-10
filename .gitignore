@@ -1,0 +1,7 @@
+# Project specifics
+
+# IDEs
+.idea/
+
+# OS
+.DS_Store
