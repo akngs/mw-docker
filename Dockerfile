@@ -53,7 +53,8 @@ RUN set -x; \
     && git submodule update --init --recursive TextExtracts \
     && git submodule update --init --recursive VisualEditor \
     && git submodule update --init --recursive WikiEditor \
-    && git clone https://github.com/wikimedia/mediawiki-extensions-ReplaceText.git ReplaceText
+    && git clone https://github.com/wikimedia/mediawiki-extensions-ReplaceText.git ReplaceText \
+    && find . -name ".git" -exec rm -R {} \;
 
 COPY composer.local.json /usr/src/mediawiki/composer.local.json
 RUN set -x; \
