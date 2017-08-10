@@ -191,4 +191,5 @@ MW_INSTALL_PATH=/var/www/html php maintenance/update.php --quick --conf ./LocalS
 # Fix file ownership and permissions
 chown -R www-data: /var/www/html
 
-exec "$@"
+# Done
+apachectl -e info -D FOREGROUND

@@ -66,5 +66,4 @@ COPY mediawiki.apache2.conf /etc/apache2/mediawiki.conf
 COPY entrypoint.sh /entrypoint.sh
 
 EXPOSE 80 443
-ENTRYPOINT ["/entrypoint.sh"]
-CMD ["apachectl", "-e", "info", "-D", "FOREGROUND"]
+CMD ["/entrypoint.sh"]
