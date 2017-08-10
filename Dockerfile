@@ -54,7 +54,8 @@ RUN set -x; \
     && git submodule update --init --recursive VisualEditor \
     && git submodule update --init --recursive WikiEditor \
     && git clone https://github.com/wikimedia/mediawiki-extensions-ReplaceText.git ReplaceText \
-    && find . -name ".git" -exec rm -R {} \;
+    && cd .. \
+    && ( find . -type d -name ".git" && find . -name ".gitignore" && find . -name ".gitmodules" ) | xargs rm -rf
 
 COPY composer.local.json /usr/src/mediawiki/composer.local.json
 RUN set -x; \
