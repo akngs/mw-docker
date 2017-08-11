@@ -6,6 +6,7 @@
     "mediawiki/semantic-compound-queries": "~1",
     "mediawiki/semantic-extra-special-properties": "~1",
     "mediawiki/semantic-glossary": "~2",
+    "mediawiki/maps": "~4.3",
     "mediawiki/semantic-meta-tags": "~1",
     "mediawiki/semantic-result-formats": "~2",
     "mediawiki/page-forms": "~4",
