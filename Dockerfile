@@ -60,7 +60,8 @@ RUN set -x; \
 COPY composer.local.json /usr/src/mediawiki/composer.local.json
 RUN set -x; \
     cd /usr/src/mediawiki \
-    && composer update -o --no-dev
+    && composer update -o --no-dev \
+    && composer clearcache
 
 COPY mediawiki.php.ini /usr/local/etc/php/conf.d/mediawiki.ini
 COPY apache2.conf /etc/apache2/apache2.conf
