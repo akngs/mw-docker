@@ -38,6 +38,7 @@ RUN set -x; \
     && git submodule update --init vendor \
     && cd extensions \
     && git submodule update --init --recursive BetaFeatures \
+    && git submodule update --init --recursive CategoryTree \
     && git submodule update --init --recursive Cite \
     && git submodule update --init --recursive Citoid \
     && git submodule update --init --recursive CodeEditor \
