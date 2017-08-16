@@ -189,7 +189,8 @@ echo >&2 'info: Running maintenance/update.php';
 MW_INSTALL_PATH=/var/www/html php maintenance/update.php --quick --conf ./LocalSettings.php
 
 # Fix file ownership and permissions
-chown -R www-data: /var/www/html
+chown -R www-data: /usr/src/mediawiki
+chown -R www-data: /data/images
 
 # Done
 apachectl -e info -D FOREGROUND
