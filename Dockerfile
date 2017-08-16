@@ -18,7 +18,6 @@ RUN set -x; \
         php7.1-intl \
         php7.1-mbstring \
         php7.1-xml \
-        texvc \
         unzip \
         zip \
     && rm -rf /var/lib/apt/lists/* \
@@ -44,7 +43,6 @@ RUN set -x; \
     && git submodule update --init --recursive CodeEditor \
     && git submodule update --init --recursive Echo \
     && git submodule update --init --recursive Flow \
-    && git submodule update --init --recursive Math \
     && git submodule update --init --recursive MobileFrontend \
     && git submodule update --init --recursive PageImages \
     && git submodule update --init --recursive ParserFunctions \
@@ -55,6 +53,7 @@ RUN set -x; \
     && git submodule update --init --recursive VisualEditor \
     && git submodule update --init --recursive WikiEditor \
     && git clone https://github.com/wikimedia/mediawiki-extensions-ReplaceText.git ReplaceText \
+    && git clone --recursive https://github.com/jmnote/SimpleMathJax.git \
     && cd .. \
     && ( find . -type d -name ".git" && find . -name ".gitignore" && find . -name ".gitmodules" ) | xargs rm -rf
 
