@@ -46,6 +46,7 @@ RUN set -x; \
     && git submodule update --init --recursive MobileFrontend \
     && git submodule update --init --recursive PageImages \
     && git submodule update --init --recursive ParserFunctions \
+    && git submodule update --init --recursive Popups \
     && git submodule update --init --recursive Scribunto \
     && git submodule update --init --recursive SyntaxHighlight_GeSHi \
     && git submodule update --init --recursive TemplateData \
