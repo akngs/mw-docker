@@ -6,6 +6,7 @@ RUN set -x; \
     && apt-get install -y --no-install-recommends \
         apache2 \
         ca-certificates \
+        certbot \
         curl \
         git \
         imagemagick \
@@ -67,7 +68,7 @@ RUN set -x; \
 
 COPY mediawiki.php.ini /usr/local/etc/php/conf.d/mediawiki.ini
 COPY apache2.conf /etc/apache2/apache2.conf
-COPY mediawiki.apache2.conf /etc/apache2/mediawiki.conf
+COPY mediawiki.apache2.conf /etc/apache2/sites-enabled/mediawiki.conf
 COPY entrypoint.sh /entrypoint.sh
 
 EXPOSE 80 443

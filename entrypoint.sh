@@ -132,18 +132,15 @@ if [ -d "$MEDIAWIKI_SHARED" ]; then
 	if [ $MEDIAWIKI_ENABLE_SSL = true ]; then
 		echo >&2 'info: enabling ssl'
 		a2enmod ssl
-
-		cp "$MEDIAWIKI_SHARED/ssl.key" /etc/apache2/ssl.key
-		cp "$MEDIAWIKI_SHARED/ssl.crt" /etc/apache2/ssl.crt
-		cp "$MEDIAWIKI_SHARED/ssl.bundle.crt" /etc/apache2/ssl.bundle.crt
+		certbot certonly --webroot -w /var/www/html --email "$MEDIAWIKI_ADMIN_EMAIL" --agree-tos -d "$MEDIAWIKI_SITE_SERVER}" -n
 	elif [ -e "/etc/apache2/mods-enabled/ssl.load" ]; then
 		echo >&2 'warning: disabling ssl'
 		a2dismod ssl
 	fi
 elif [ $MEDIAWIKI_ENABLE_SSL = true ]; then
-	echo >&2 'error: Detected MEDIAWIKI_ENABLE_SSL flag but found no data volume';
-	echo >&2 '	Did you forget to mount the volume with -v?'
-	exit 1
+#	echo >&2 'error: Detected MEDIAWIKI_ENABLE_SSL flag but found no data volume';
+#	echo >&2 '	Did you forget to mount the volume with -v?'
+#	exit 1
 fi
 
 # If there is no LocalSettings.php, create one using maintenance/install.php
