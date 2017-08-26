@@ -138,9 +138,7 @@ if [ -d "$MEDIAWIKI_SHARED" ]; then
 		a2dismod ssl
 	fi
 elif [ $MEDIAWIKI_ENABLE_SSL = true ]; then
-#	echo >&2 'error: Detected MEDIAWIKI_ENABLE_SSL flag but found no data volume';
-#	echo >&2 '	Did you forget to mount the volume with -v?'
-#	exit 1
+    certbot certonly --webroot -w /var/www/html --email "$MEDIAWIKI_ADMIN_EMAIL" --agree-tos -d "$MEDIAWIKI_SITE_SERVER}" -n
 fi
 
 # If there is no LocalSettings.php, create one using maintenance/install.php
