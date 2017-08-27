@@ -23,6 +23,9 @@ RUN set -x; \
         zip \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /var/cache/apt/archives/* \
+    && a2dismod auth_basic -f \
+    && a2dismod autoindex -f \
+    && a2dismod status \
     && a2enmod rewrite \
     && a2enmod proxy \
     && a2enmod proxy_http \
