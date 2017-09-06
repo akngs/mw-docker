@@ -131,10 +131,10 @@ fi
 
 if [ $MEDIAWIKI_ENABLE_SSL = true ]; then
     if [ -d "$MEDIAWIKI_SHARED/letsencrypt" ]; then
-        cp -r "$MEDIAWIKI_SHARED/letsencrypt" /etc/letsencrypt
+        cp -r "$MEDIAWIKI_SHARED/letsencrypt" /etc
     else
         certbot certonly --standalone --email "${MEDIAWIKI_ADMIN_EMAIL}" --agree-tos -d "${MEDIAWIKI_SITE_SERVER}" -n
-        cp -r /etc/letsencrypt "$MEDIAWIKI_SHARED/letsencrypt"
+        cp -r /etc/letsencrypt "$MEDIAWIKI_SHARED"
     fi
     a2enmod ssl
 fi
