@@ -35,7 +35,7 @@ RUN set -x; \
 
 RUN set -x; \
     mkdir -p /usr/src \
-    && git clone --depth 1 -b "wmf/1.30.0-wmf.19" https://gerrit.wikimedia.org/r/p/mediawiki/core.git /usr/src/mediawiki \
+    && git clone --depth 1 -b "wmf/1.31.0-wmf.1" https://gerrit.wikimedia.org/r/p/mediawiki/core.git /usr/src/mediawiki \
     && cd /usr/src/mediawiki \
     && git submodule update --init skins \
     && git submodule update --init vendor \
