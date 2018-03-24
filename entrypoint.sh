@@ -34,10 +34,13 @@ if [ "$MEDIAWIKI_PROTOCOL" == "https" ]; then
     else
         certbot certonly --standalone --email "${MEDIAWIKI_ADMIN_EMAIL}" --agree-tos -d "${MEDIAWIKI_SITE_SERVER}" -n
         cp -r /etc/letsencrypt "$MEDIAWIKI_SHARED"
+    fi
 
+    if [ ! -f $MEDIAWIKI_SHARED/dhparam.pem ]; then
         openssl dhparam 2048 > $MEDIAWIKI_SHARED/dhparam.pem
     fi
     cp $MEDIAWIKI_SHARED/dhparam.pem /etc/nginx/dhparam.pem
+
     envsubst '${MEDIAWIKI_SITE_SERVER}' < /etc/nginx/sites-available/mediawiki_https.conf > /etc/nginx/sites-enabled/mediawiki_https
 else
     envsubst '${MEDIAWIKI_SITE_SERVER}' < /etc/nginx/sites-available/mediawiki_http.conf > /etc/nginx/sites-enabled/mediawiki_http
