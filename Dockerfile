@@ -33,7 +33,7 @@ RUN set -x \
 # Get mediawiki and extensions
 RUN set -x \
   && mkdir -p /usr/src \
-  && git clone --depth 1 -b "wmf/1.32.0-wmf.4" https://github.com/wikimedia/mediawiki.git /usr/src/mediawiki \
+  && git clone --depth 1 -b "wmf/1.32.0-wmf.7" https://github.com/wikimedia/mediawiki.git /usr/src/mediawiki \
   && cd /usr/src/mediawiki \
   && git submodule update --init skins \
   && git submodule update --init vendor \
@@ -55,6 +55,7 @@ RUN set -x \
   && git submodule update --init --recursive TemplateData \
   && git submodule update --init --recursive TextExtracts \
   && git submodule update --init --recursive VisualEditor \
+  && git submodule update --init --recursive WikiBase \
   && git submodule update --init --recursive WikiEditor \
   && git clone https://github.com/wikimedia/mediawiki-extensions-ReplaceText.git ReplaceText \
   && git clone --recursive https://github.com/jmnote/SimpleMathJax.git \
