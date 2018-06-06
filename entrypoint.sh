@@ -88,9 +88,12 @@ if [ ! -e "LocalSettings.php" ]; then
 fi
 
 # Update
-echo >&2 'info: Running maintenance/update.php'
+echo >&2 'info: Running maintenance scripts'
 MW_INSTALL_PATH=/var/www/mediawiki php maintenance/update.php --quick --conf ./LocalSettings.php
-echo >&2 'info: Finished running maintenance/update.php'
+MW_INSTALL_PATH=/var/www/mediawiki php extensions/Wikibase/lib/maintenance/populateSitesTable.php
+MW_INSTALL_PATH=/var/www/mediawiki php extensions/Wikibase/repo/maintenance/rebuildItemsPerSite.php
+MW_INSTALL_PATH=/var/www/mediawiki php extensions/Wikibase/client/maintenance/populateInterwiki.php
+echo >&2 'info: Finished running maintenance scripts'
 
 # Run
 chown -R www-data: /data/images
