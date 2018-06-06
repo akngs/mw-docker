@@ -1,17 +1,5 @@
 {
   "require": {
-    "mediawiki/semantic-media-wiki": "~2.5",
-    "mediawiki/semantic-breadcrumb-links": "~1",
-    "mediawiki/semantic-cite": "~1",
-    "mediawiki/semantic-compound-queries": "~1",
-    "mediawiki/semantic-extra-special-properties": "~1",
-    "mediawiki/semantic-glossary": "~2",
-    "mediawiki/maps": "~4.3",
-    "mediawiki/semantic-meta-tags": "~1",
-    "mediawiki/semantic-result-formats": "~2",
-    "mediawiki/page-forms": "~4",
-    "data-values/geo": "~2",
-    "param-processor/param-processor": "~1.0",
     "pimple/pimple": "~3"
   },
   "extra": {
