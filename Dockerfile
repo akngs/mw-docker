@@ -55,7 +55,7 @@ RUN set -x \
   && git submodule update --init --recursive TemplateData \
   && git submodule update --init --recursive TextExtracts \
   && git submodule update --init --recursive VisualEditor \
-  && git submodule update --init --recursive WikiBase \
+  && git submodule update --init --recursive Wikibase \
   && git submodule update --init --recursive WikiEditor \
   && git clone https://github.com/wikimedia/mediawiki-extensions-ReplaceText.git ReplaceText \
   && git clone --recursive https://github.com/jmnote/SimpleMathJax.git \
