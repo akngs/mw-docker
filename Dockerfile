@@ -43,8 +43,10 @@ RUN set -x \
   && git submodule update --init --recursive Cite \
   && git submodule update --init --recursive Citoid \
   && git submodule update --init --recursive CodeEditor \
+  && git submodule update --init --recursive CodeMirror \
   && git submodule update --init --recursive Echo \
   && git submodule update --init --recursive Flow \
+  && git submodule update --init --recursive Interwiki \
   && git submodule update --init --recursive MobileFrontend \
   && git submodule update --init --recursive PageImages \
   && git submodule update --init --recursive ParserFunctions \
