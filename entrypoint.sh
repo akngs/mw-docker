@@ -31,10 +31,11 @@ rm -f /etc/nginx/sites-enabled/*
 if [ "$MEDIAWIKI_PROTOCOL" == "https" ]; then
     if [ -d "$MEDIAWIKI_SHARED/letsencrypt" ]; then
         cp -r "$MEDIAWIKI_SHARED/letsencrypt" /etc
+        certbot renew --standalone --email "${MEDIAWIKI_ADMIN_EMAIL}" --agree-tos -d "${MEDIAWIKI_SITE_SERVER}" -n
     else
         certbot certonly --standalone --email "${MEDIAWIKI_ADMIN_EMAIL}" --agree-tos -d "${MEDIAWIKI_SITE_SERVER}" -n
-        cp -r /etc/letsencrypt "$MEDIAWIKI_SHARED"
     fi
+    cp -r /etc/letsencrypt "$MEDIAWIKI_SHARED"
 
     if [ ! -f $MEDIAWIKI_SHARED/dhparam.pem ]; then
         openssl dhparam 2048 > $MEDIAWIKI_SHARED/dhparam.pem
