@@ -80,7 +80,7 @@ RUN set -x \
   && rm -rf /var/www/html \
   && ln -sf /usr/src/mediawiki /var/www/mediawiki
 
-COPY mediawiki.php.ini /etc/php/7.2/fpm/conf.d/mediawiki.ini
+COPY mediawiki.php.ini /etc/php/7.3/fpm/conf.d/mediawiki.ini
 
 # Done
 EXPOSE 80 443
