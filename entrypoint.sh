@@ -97,5 +97,5 @@ echo >&2 'info: Finished running maintenance scripts'
 chown -R www-data: /data/images
 
 echo >&2 'info: Starting PHP FPM and Nginx...'
-service php7.2-fpm start
+service php7.3-fpm start
 nginx -g "daemon off;"
