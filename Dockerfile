@@ -1,4 +1,4 @@
-FROM debian:sid
+FROM debian:sid-slim
 LABEL maintainer="jania902@gmail.com"
 
 # Install debian packages
@@ -13,16 +13,16 @@ RUN set -x \
     imagemagick \
     netcat \
     nginx \
-    php7.2 \
-    php7.2-apcu \
-    php7.2-cli \
-    php7.2-curl \
-    php7.2-gd \
-    php7.2-fpm \
-    php7.2-intl \
-    php7.2-mbstring \
-    php7.2-mysql \
-    php7.2-xml \
+    php7.3 \
+    php7.3-apcu \
+    php7.3-cli \
+    php7.3-curl \
+    php7.3-gd \
+    php7.3-fpm \
+    php7.3-intl \
+    php7.3-mbstring \
+    php7.3-mysql \
+    php7.3-xml \
     python-certbot-nginx \
     unzip \
     zip \
@@ -80,7 +80,7 @@ RUN set -x \
   && rm -rf /var/www/html \
   && ln -sf /usr/src/mediawiki /var/www/mediawiki
 
-COPY mediawiki.php.ini /etc/php/7.2/fpm/conf.d/mediawiki.ini
+COPY mediawiki.php.ini /etc/php/7.3/fpm/conf.d/mediawiki.ini
 
 # Done
 EXPOSE 80 443
