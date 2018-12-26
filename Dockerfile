@@ -10,7 +10,9 @@ RUN set -x \
     curl \
     git \
     gettext-base \
+    graphviz \
     imagemagick \
+    mscgen \
     netcat \
     nginx \
     php7.3 \
@@ -46,6 +48,7 @@ RUN set -x \
   && git submodule update --init --recursive CodeMirror \
   && git submodule update --init --recursive Echo \
   && git submodule update --init --recursive Flow \
+  && git submodule update --init --recursive GraphViz \
   && git submodule update --init --recursive Interwiki \
   && git submodule update --init --recursive MobileFrontend \
   && git submodule update --init --recursive PageImages \
