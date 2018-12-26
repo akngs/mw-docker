@@ -48,6 +48,7 @@ RUN set -x \
   && git submodule update --init --recursive CodeMirror \
   && git submodule update --init --recursive Echo \
   && git submodule update --init --recursive Flow \
+  && git submodule update --init --recursive ImageMap \
   && git submodule update --init --recursive Interwiki \
   && git submodule update --init --recursive MobileFrontend \
   && git submodule update --init --recursive PageImages \
