@@ -48,7 +48,6 @@ RUN set -x \
   && git submodule update --init --recursive CodeMirror \
   && git submodule update --init --recursive Echo \
   && git submodule update --init --recursive Flow \
-  && git submodule update --init --recursive GraphViz \
   && git submodule update --init --recursive Interwiki \
   && git submodule update --init --recursive MobileFrontend \
   && git submodule update --init --recursive PageImages \
@@ -61,6 +60,7 @@ RUN set -x \
   && git submodule update --init --recursive TextExtracts \
   && git submodule update --init --recursive VisualEditor \
   && git submodule update --init --recursive WikiEditor \
+  && git clone https://github.com/wikimedia/mediawiki-extensions-GraphViz.git GraphViz \
   && git clone https://github.com/wikimedia/mediawiki-extensions-ReplaceText.git ReplaceText \
   && git clone --recursive https://github.com/jmnote/SimpleMathJax.git \
   && cd .. \
