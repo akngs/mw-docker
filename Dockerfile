@@ -25,7 +25,7 @@ RUN set -x \
     php7.3-mbstring \
     php7.3-mysql \
     php7.3-xml \
-    python-certbot-nginx \
+    python3-certbot-nginx \
     unzip \
     zip \
   && rm -rf /var/lib/apt/lists/* \
