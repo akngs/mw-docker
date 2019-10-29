@@ -31,7 +31,7 @@ rm -f /etc/nginx/sites-enabled/*
 if [ "$MEDIAWIKI_PROTOCOL" == "https" ]; then
     if [ -d "$MEDIAWIKI_SHARED/letsencrypt" ]; then
         cp -r "$MEDIAWIKI_SHARED/letsencrypt" /etc
-        certbot renew --standalone
+        certbot renew --standalone --no-random-sleep-on-renew
     else
         certbot certonly --standalone --email "${MEDIAWIKI_ADMIN_EMAIL}" --agree-tos -d "${MEDIAWIKI_SITE_SERVER}" -n
     fi

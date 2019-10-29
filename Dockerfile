@@ -63,6 +63,9 @@ RUN set -x \
   && git submodule update --init --recursive WikiEditor \
   && git clone https://github.com/wikimedia/mediawiki-extensions-GraphViz.git GraphViz \
   && git clone https://github.com/wikimedia/mediawiki-extensions-ReplaceText.git ReplaceText \
+  && git clone https://github.com/wikimedia/mediawiki-extensions-Cargo.git Cargo \
+  && git clone https://github.com/wikimedia/mediawiki-extensions-PageSchemas.git PageSchemas \
+  && git clone https://github.com/wikimedia/mediawiki-extensions-PageForms.git PageForms \
   && git clone --recursive https://github.com/jmnote/SimpleMathJax.git \
   && cd .. \
   && ( find . -type d -name ".git" && find . -name ".gitignore" && find . -name ".gitmodules" ) | xargs rm -rf
