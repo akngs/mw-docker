@@ -15,16 +15,16 @@ RUN set -x \
     mscgen \
     netcat \
     nginx \
-    php7.3 \
-    php7.3-apcu \
-    php7.3-cli \
-    php7.3-curl \
-    php7.3-gd \
-    php7.3-fpm \
-    php7.3-intl \
-    php7.3-mbstring \
-    php7.3-mysql \
-    php7.3-xml \
+    php7.4 \
+    php7.4-apcu \
+    php7.4-cli \
+    php7.4-curl \
+    php7.4-gd \
+    php7.4-fpm \
+    php7.4-intl \
+    php7.4-mbstring \
+    php7.4-mysql \
+    php7.4-xml \
     python3-certbot-nginx \
     unzip \
     zip \
@@ -87,7 +87,7 @@ RUN set -x \
   && rm -rf /var/www/html \
   && ln -sf /usr/src/mediawiki /var/www/mediawiki
 
-COPY mediawiki.php.ini /etc/php/7.3/fpm/conf.d/mediawiki.ini
+COPY mediawiki.php.ini /etc/php/7.4/fpm/conf.d/mediawiki.ini
 
 # Done
 EXPOSE 80 443
