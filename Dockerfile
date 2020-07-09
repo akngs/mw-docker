@@ -57,6 +57,7 @@ RUN set -x \
   && git submodule update --init --recursive Popups \
   && git submodule update --init --recursive RevisionSlider \
   && git submodule update --init --recursive Scribunto \
+  && git submodule update --init --recursive SesMailer \
   && git submodule update --init --recursive SyntaxHighlight_GeSHi \
   && git submodule update --init --recursive TemplateData \
   && git submodule update --init --recursive TextExtracts \
