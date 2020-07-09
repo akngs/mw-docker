@@ -26,6 +26,7 @@ RUN set -x \
     php7.4-mysql \
     php7.4-xml \
     python3-certbot-nginx \
+    sendmail \
     unzip \
     zip \
   && rm -rf /var/lib/apt/lists/* \
