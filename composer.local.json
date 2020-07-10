@@ -1,7 +1,6 @@
 {
   "require": {
-    "pimple/pimple": "~3",
-    "aws/aws-sdk-php": "~3"
+    "pimple/pimple": "~3"
   },
   "extra": {
     "merge-plugin": {
