@@ -25,10 +25,12 @@ RUN set -x \
     php7.4-mbstring \
     php7.4-mysql \
     php7.4-xml \
+    php-pear \
     python3-certbot-nginx \
     sendmail \
     unzip \
     zip \
+  && pear install mail Net_SMTP Auth_SASL mail_mime \
   && rm -rf /var/lib/apt/lists/* \
   && rm -rf /var/cache/apt/archives/* \
   && rm /etc/nginx/sites-enabled/default
