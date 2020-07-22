@@ -3,7 +3,6 @@ LABEL maintainer="jania902@gmail.com"
 
 # Install debian packages
 RUN set -x \
-  && add-apt-repository universe \
   && apt-get update \
   && apt-get install -f -y --no-install-recommends \
     ca-certificates \
@@ -29,6 +28,7 @@ RUN set -x \
     php-pear \
     python3-certbot-nginx \
     sendmail \
+    software-properties-common \
     unzip \
     zip \
   && pear install mail Net_SMTP Auth_SASL mail_mime \
