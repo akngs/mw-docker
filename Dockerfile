@@ -35,7 +35,7 @@ RUN set -x \
 # Get mediawiki and extensions
 RUN set -x \
   && mkdir -p /usr/src \
-  && git clone --depth 1 -b "wmf/1.35.0-wmf.39" https://github.com/wikimedia/mediawiki.git /usr/src/mediawiki \
+  && git clone --depth 1 -b "wmf/1.36.0-wmf.1" https://github.com/wikimedia/mediawiki.git /usr/src/mediawiki \
   && cd /usr/src/mediawiki \
   && git submodule update --init skins \
   && git submodule update --init vendor \
@@ -58,6 +58,7 @@ RUN set -x \
   && git submodule update --init --recursive Scribunto \
   && git submodule update --init --recursive SyntaxHighlight_GeSHi \
   && git submodule update --init --recursive TemplateData \
+  && git submodule update --init --recursive Thanks \
   && git submodule update --init --recursive TextExtracts \
   && git submodule update --init --recursive VisualEditor \
   && git submodule update --init --recursive WikiEditor \
