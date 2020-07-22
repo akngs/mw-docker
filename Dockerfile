@@ -3,8 +3,9 @@ LABEL maintainer="jania902@gmail.com"
 
 # Install debian packages
 RUN set -x \
-  && apt update \
-  && apt install -f -y --no-install-recommends \
+  && add-apt-repository universe \
+  && apt-get update \
+  && apt-get install -f -y --no-install-recommends \
     ca-certificates \
     certbot \
     curl \
@@ -13,7 +14,7 @@ RUN set -x \
     graphviz \
     imagemagick \
     mscgen \
-    netcat \
+    netcat-traditional \
     nginx \
     php7.4 \
     php7.4-apcu \
