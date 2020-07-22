@@ -25,9 +25,12 @@ RUN set -x \
     php7.4-mbstring \
     php7.4-mysql \
     php7.4-xml \
+    php-pear \
     python3-certbot-nginx \
+    sendmail \
     unzip \
     zip \
+  && pear install mail Net_SMTP Auth_SASL mail_mime \
   && rm -rf /var/lib/apt/lists/* \
   && rm -rf /var/cache/apt/archives/* \
   && rm /etc/nginx/sites-enabled/default
@@ -68,6 +71,8 @@ RUN set -x \
   && git clone https://github.com/wikimedia/mediawiki-extensions-PageSchemas.git PageSchemas \
   && git clone https://github.com/wikimedia/mediawiki-extensions-PageForms.git PageForms \
   && git clone --recursive https://github.com/jmnote/SimpleMathJax.git \
+  && git clone https://github.com/hangya/mw-ses-mailer.git \
+  && mv mw-ses-mailer/SesMailer ./SesMailer \
   && cd .. \
   && ( find . -type d -name ".git" && find . -name ".gitignore" && find . -name ".gitmodules" ) | xargs rm -rf
 
