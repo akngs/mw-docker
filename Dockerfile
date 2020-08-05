@@ -39,7 +39,7 @@ RUN set -x \
 # Get mediawiki and extensions
 RUN set -x \
   && mkdir -p /usr/src \
-  && git clone --depth 1 -b "wmf/1.36.0-wmf.1" https://github.com/wikimedia/mediawiki.git /usr/src/mediawiki \
+  && git clone --depth 1 -b "wmf/1.36.0-wmf.3" https://github.com/wikimedia/mediawiki.git /usr/src/mediawiki \
   && cd /usr/src/mediawiki \
   && git submodule update --init skins \
   && git submodule update --init vendor \
@@ -71,6 +71,7 @@ RUN set -x \
   && git clone https://github.com/wikimedia/mediawiki-extensions-Cargo.git Cargo \
   && git clone https://github.com/wikimedia/mediawiki-extensions-PageSchemas.git PageSchemas \
   && git clone https://github.com/wikimedia/mediawiki-extensions-PageForms.git PageForms \
+  && git clone https://github.com/wikimedia/mediawiki-extensions-YouTube.git YouTube \
   && git clone --recursive https://github.com/jmnote/SimpleMathJax.git \
   && git clone https://github.com/hangya/mw-ses-mailer.git \
   && mv mw-ses-mailer/SesMailer ./SesMailer \
