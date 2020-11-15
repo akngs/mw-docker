@@ -39,7 +39,7 @@ RUN set -x \
 # Get mediawiki and extensions
 RUN set -x \
   && mkdir -p /usr/src \
-  && git clone --depth 1 -b "wmf/1.36.0-wmf.3" https://github.com/wikimedia/mediawiki.git /usr/src/mediawiki \
+  && git clone --depth 1 -b "wmf/1.36.0-wmf.17" https://github.com/wikimedia/mediawiki.git /usr/src/mediawiki \
   && cd /usr/src/mediawiki \
   && git submodule update --init skins \
   && git submodule update --init vendor \
